@@ -1,10 +1,10 @@
-package test.task.univercityconsole;
+package test.task.universityconsole;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class UnivercityTestApplicationTests {
+class UniversityTestApplicationTests {
 
     @Test
     void contextLoads() {
