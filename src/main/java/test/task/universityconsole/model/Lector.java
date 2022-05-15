@@ -1,5 +1,6 @@
 package test.task.universityconsole.model;
 
+import java.math.BigDecimal;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -31,4 +32,5 @@ public class Lector {
     private List<Department> departments;
     @ManyToOne
     private Degree degree;
+    private BigDecimal salary;
 }

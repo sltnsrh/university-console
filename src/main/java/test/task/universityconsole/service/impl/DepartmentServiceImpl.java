@@ -1,5 +1,7 @@
 package test.task.universityconsole.service.impl;
 
+import java.math.BigDecimal;
+import java.util.List;
 import org.springframework.stereotype.Service;
 import test.task.universityconsole.model.Department;
 import test.task.universityconsole.model.Lector;
@@ -21,7 +23,37 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    public Lector getLectorByDepartment(String departmentName) {
+    public Lector getDepartmentHead(String departmentName) {
         return departmentRepository.getHeadOfDepartment(departmentName);
+    }
+
+    @Override
+    public BigDecimal getAverageSalary(String departmentName) {
+        return departmentRepository.getAverageSalary(departmentName);
+    }
+
+    @Override
+    public Integer getEmployeeCount(String departmentName) {
+        return departmentRepository.getEmployeeCount(departmentName);
+    }
+
+    @Override
+    public List<String> getAllNames() {
+        return departmentRepository.getAllNames();
+    }
+
+    @Override
+    public Integer getAssistantsCount(String departmentName) {
+        return departmentRepository.getAssistantsCount(departmentName);
+    }
+
+    @Override
+    public Integer getAssociateProfessorsCount(String departmentName) {
+        return departmentRepository.getAssociateProfessorsCount(departmentName);
+    }
+
+    @Override
+    public Integer getProfessorsCount(String departmentName) {
+        return departmentRepository.getProfessorsCount(departmentName);
     }
 }

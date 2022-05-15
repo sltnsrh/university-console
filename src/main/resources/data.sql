@@ -2,12 +2,13 @@ INSERT INTO degrees (degree_name) VALUES ('ASSISTANT'),
                                          ('ASSOCIATE_PROFESSOR'),
                                          ('PROFESSOR');
 
-INSERT INTO lectors (first_name, last_name, degree_id) VALUES ('John', 'Richard', 1),
-                                                              ('Roy', 'Chan', 3),
-                                                              ('Bob', 'Alison', 2),
-                                                              ('Claudia', 'Jackson', 1),
-                                                              ('Tonny', 'Clinton', 2),
-                                                              ('Juli', 'Boson', 3);
+INSERT INTO lectors (first_name, last_name, degree_id, salary)
+VALUES ('John', 'Richard', 1, 1000.00),
+       ('Roy', 'Chan', 3, 3500.00),
+       ('Bob', 'Alison', 2, 2300.00),
+       ('Claudia', 'Jackson', 1, 1100.00),
+       ('Tonny', 'Clinton', 2, 2500.00),
+       ('Juli', 'Boson', 3, 3300.00);
 
 INSERT INTO departments (name, lector_id) VALUES ('Economics', 1),
                                       ('Philosophy', 3),

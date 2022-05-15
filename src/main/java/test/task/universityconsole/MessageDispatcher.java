@@ -3,6 +3,8 @@ package test.task.universityconsole;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import org.springframework.stereotype.Component;
 import test.task.universityconsole.controller.ControllersMap;
 
@@ -22,8 +24,11 @@ public class MessageDispatcher {
 
     private void getStrategy(String consoleRequest) {
         for (String key: ControllersMap.controllers.keySet()) {
-            if (consoleRequest.toLowerCase().contains(key)) {
-                String answerMessage = ControllersMap.controllers.get(key).getResponse(consoleRequest);
+            Pattern pattern = Pattern.compile(key, Pattern.CASE_INSENSITIVE);
+            Matcher matcher = pattern.matcher(consoleRequest);
+            if (matcher.find()) {
+                String answerMessage = ControllersMap.controllers.get(key)
+                        .getResponse(consoleRequest);
                 System.out.println(answerMessage);
                 return;
             }

@@ -4,18 +4,31 @@ import org.springframework.stereotype.Component;
 import test.task.universityconsole.controller.ControllersMap;
 import test.task.universityconsole.controller.MessageController;
 import test.task.universityconsole.service.DepartmentService;
+import test.task.universityconsole.util.ParseUtil;
 
 @Component
 public class DepartmentStatisticsControllerImpl implements MessageController {
+    private static final String CONTROLLER_KEY = "^Show\\s\\w+\\sstatistics";
     private final DepartmentService departmentService;
 
     public DepartmentStatisticsControllerImpl(DepartmentService departmentService) {
         this.departmentService = departmentService;
-        ControllersMap.controllers.put("show  statistics", this);
+        ControllersMap.controllers.put(CONTROLLER_KEY, this);
     }
 
     @Override
     public String getResponse(String consoleRequest) {
-        return null;
+        String departmentName = ParseUtil.getDepartmentName(departmentService, consoleRequest);
+        if (departmentName != null) {
+            int assistantsCount = departmentService.getAssistantsCount(departmentName);
+            int associateProfessorsCount = departmentService
+                    .getAssociateProfessorsCount(departmentName);
+            int professorsCount = departmentService.getProfessorsCount(departmentName);
+            return "Answer: assistants - " + assistantsCount + System.lineSeparator()
+                    + "associate professors - " + associateProfessorsCount + System.lineSeparator()
+                    + "professors - " + professorsCount;
+        }
+        return "Incorrect department name, try another "
+                + "or enter 'exit' to finish the app";
     }
 }
