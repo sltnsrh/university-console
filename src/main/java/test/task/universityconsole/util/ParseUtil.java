@@ -17,6 +17,6 @@ public class ParseUtil {
     }
 
     public static String getSearchTemplate(String consoleRequest) {
-        return consoleRequest.substring(consoleRequest.lastIndexOf(" " + 1));
+        return consoleRequest.substring(consoleRequest.lastIndexOf(" ") + 1);
     }
 }
