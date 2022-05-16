@@ -8,7 +8,7 @@ import test.task.universityconsole.util.ParseUtil;
 
 @Component
 public class CountEmployeeControllerImpl implements MessageController {
-    private static final String CONTROLLER_KEY = "^show count of employee for ";
+    private static final String CONTROLLER_KEY = "^show count of employee for";
     private final DepartmentService departmentService;
 
     public CountEmployeeControllerImpl(DepartmentService departmentService) {

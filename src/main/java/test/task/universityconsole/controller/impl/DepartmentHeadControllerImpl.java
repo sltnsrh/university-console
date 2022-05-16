@@ -9,7 +9,7 @@ import test.task.universityconsole.util.ParseUtil;
 
 @Component
 public class DepartmentHeadControllerImpl implements MessageController {
-    private static final String CONTROLLER_KEY = "^who is head of department ";
+    private static final String CONTROLLER_KEY = "^who is head of department";
     private final DepartmentService departmentService;
 
     public DepartmentHeadControllerImpl(DepartmentService departmentService) {

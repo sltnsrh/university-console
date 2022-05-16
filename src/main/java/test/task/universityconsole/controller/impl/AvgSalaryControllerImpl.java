@@ -10,7 +10,7 @@ import test.task.universityconsole.util.ParseUtil;
 
 @Component
 public class AvgSalaryControllerImpl implements MessageController {
-    private static final String CONTROLLER_KEY = "^show the average salary for the department ";
+    private static final String CONTROLLER_KEY = "^show the average salary for the department";
     private final DepartmentService departmentService;
 
     public AvgSalaryControllerImpl(DepartmentService departmentService) {

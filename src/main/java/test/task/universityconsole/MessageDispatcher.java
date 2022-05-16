@@ -25,7 +25,7 @@ public class MessageDispatcher {
     private void getStrategy(String consoleRequest) {
         for (String key: ControllersMap.controllers.keySet()) {
             Pattern pattern = Pattern.compile(key, Pattern.CASE_INSENSITIVE);
-            Matcher matcher = pattern.matcher(consoleRequest);
+            Matcher matcher = pattern.matcher(consoleRequest.trim());
             if (matcher.find()) {
                 String answerMessage = ControllersMap.controllers.get(key)
                         .getResponse(consoleRequest);

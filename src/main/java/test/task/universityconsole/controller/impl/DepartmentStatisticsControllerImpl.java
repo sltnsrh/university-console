@@ -8,7 +8,7 @@ import test.task.universityconsole.util.ParseUtil;
 
 @Component
 public class DepartmentStatisticsControllerImpl implements MessageController {
-    private static final String CONTROLLER_KEY = "^Show\\s\\w+\\sstatistics";
+    private static final String CONTROLLER_KEY = "^Show\\s+\\w+\\s+statistics";
     private final DepartmentService departmentService;
 
     public DepartmentStatisticsControllerImpl(DepartmentService departmentService) {
@@ -24,7 +24,8 @@ public class DepartmentStatisticsControllerImpl implements MessageController {
             int associateProfessorsCount = departmentService
                     .getAssociateProfessorsCount(departmentName);
             int professorsCount = departmentService.getProfessorsCount(departmentName);
-            return "Answer: assistants - " + assistantsCount + System.lineSeparator()
+            return "Answer: " + System.lineSeparator()
+                    + "assistants - " + assistantsCount + System.lineSeparator()
                     + "associate professors - " + associateProfessorsCount + System.lineSeparator()
                     + "professors - " + professorsCount;
         }

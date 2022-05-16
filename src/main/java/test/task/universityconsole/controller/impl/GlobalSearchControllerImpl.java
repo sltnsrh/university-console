@@ -9,7 +9,7 @@ import test.task.universityconsole.util.ParseUtil;
 
 @Component
 public class GlobalSearchControllerImpl implements MessageController {
-    private static final String CONTROLLER_KEY = "^global search by ";
+    private static final String CONTROLLER_KEY = "^global search by";
     private static  final String ANSWER_TEMPLATE = "Answer: ";
     private static final String COMMA_SEPARATOR = ",";
     private static final String WHITESPACE_SEPARATOR = " ";
@@ -25,20 +25,23 @@ public class GlobalSearchControllerImpl implements MessageController {
     @Override
     public String getResponse(String consoleRequest) {
         String template = ParseUtil.getSearchTemplate(consoleRequest).toLowerCase();
-        if (template != null) {
+        if (!template.trim().isEmpty()) {
             List<String> resultList = lectorService.findByTemplate(template);
-            StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.append(ANSWER_TEMPLATE);
+            StringBuilder answerBuilder = new StringBuilder();
+            answerBuilder.append(ANSWER_TEMPLATE);
+            if (resultList.isEmpty()) {
+                return answerBuilder + "nothing was found";
+            }
             for (int i = 0; i < resultList.size(); i++) {
                 String[] firstLastName = resultList.get(i).split(COMMA_SEPARATOR);
-                stringBuilder.append(firstLastName[FIRST_NAME_INDEX])
+                answerBuilder.append(firstLastName[FIRST_NAME_INDEX])
                         .append(WHITESPACE_SEPARATOR)
                         .append(firstLastName[LAST_NAME_INDEX]);
                 if (i < resultList.size() - 1) {
-                    stringBuilder.append(COMMA_SEPARATOR + WHITESPACE_SEPARATOR);
+                    answerBuilder.append(COMMA_SEPARATOR + WHITESPACE_SEPARATOR);
                 }
             }
-            return stringBuilder.toString();
+            return answerBuilder.toString();
         }
         return "Incorrect find template, try another "
                 + "or enter 'exit' to finish the app";
