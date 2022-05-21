@@ -16,9 +16,5 @@ public interface DepartmentService {
 
     List<String> getAllNames();
 
-    Integer getAssistantsCount(String departmentName);
-
-    Integer getAssociateProfessorsCount(String departmentName);
-
-    Integer getProfessorsCount(String departmentName);
+    Integer getDegreeCount(String departmentName, String degreeName);
 }
