@@ -43,17 +43,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    public Integer getAssistantsCount(String departmentName) {
-        return departmentRepository.getAssistantsCount(departmentName);
-    }
-
-    @Override
-    public Integer getAssociateProfessorsCount(String departmentName) {
-        return departmentRepository.getAssociateProfessorsCount(departmentName);
-    }
-
-    @Override
-    public Integer getProfessorsCount(String departmentName) {
-        return departmentRepository.getProfessorsCount(departmentName);
+    public Integer getDegreeCount(String departmentName, String degreeName) {
+        return departmentRepository.getDegreeCount(departmentName, degreeName);
     }
 }
