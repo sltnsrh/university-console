@@ -1,32 +1,28 @@
-package test.task.universityconsole.controller.impl;
+package test.task.universityconsole.service.impl;
 
 import java.util.List;
-import org.springframework.stereotype.Component;
-import test.task.universityconsole.controller.ControllersMap;
-import test.task.universityconsole.controller.MessageController;
-import test.task.universityconsole.service.LectorService;
+import org.springframework.stereotype.Service;
+import test.task.universityconsole.service.ResponseService;
 import test.task.universityconsole.util.ParseUtil;
 
-@Component
-public class GlobalSearchControllerImpl implements MessageController {
-    private static final String CONTROLLER_KEY = "^global search by";
+@Service
+public class GlobalSearchServiceImpl implements ResponseService {
     private static  final String ANSWER_TEMPLATE = "Answer: ";
     private static final String COMMA_SEPARATOR = ",";
     private static final String WHITESPACE_SEPARATOR = " ";
     private static final int FIRST_NAME_INDEX = 0;
     public static final int LAST_NAME_INDEX = 1;
-    private final LectorService lectorService;
+    private final ParseUtil parseUtil;
 
-    public GlobalSearchControllerImpl(LectorService lectorService) {
-        this.lectorService = lectorService;
-        ControllersMap.controllers.put(CONTROLLER_KEY, this);
+    public GlobalSearchServiceImpl(ParseUtil parseUtil) {
+        this.parseUtil = parseUtil;
     }
 
     @Override
     public String getResponse(String consoleRequest) {
-        String template = ParseUtil.getSearchTemplate(consoleRequest).toLowerCase();
+        String template = parseUtil.getSearchTemplate(consoleRequest).toLowerCase();
         if (!template.trim().isEmpty()) {
-            List<String> resultList = lectorService.findByTemplate(template);
+            List<String> resultList = parseUtil.getLectorService().findByTemplate(template);
             StringBuilder answerBuilder = new StringBuilder();
             answerBuilder.append(ANSWER_TEMPLATE);
             if (resultList.isEmpty()) {
