@@ -1,20 +1,20 @@
-package test.task.universityconsole;
+package task.universityconsole;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import test.task.universityconsole.controller.MessageController;
+import task.universityconsole.controller.MessageController;
 
 @SpringBootApplication
-public class UniversityTestApplication implements CommandLineRunner {
-    public static MessageController messageController;
+public class UniversityApplication implements CommandLineRunner {
+    private static MessageController messageController;
 
-    public UniversityTestApplication(MessageController messageController) {
-        UniversityTestApplication.messageController = messageController;
+    public UniversityApplication(MessageController messageController) {
+        UniversityApplication.messageController = messageController;
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(UniversityTestApplication.class, args);
+        SpringApplication.run(UniversityApplication.class, args);
     }
 
     @Override

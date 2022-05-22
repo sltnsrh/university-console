@@ -1,4 +1,4 @@
-package test.task.universityconsole.model;
+package task.universityconsole.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

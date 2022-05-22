@@ -1,10 +1,10 @@
-package test.task.universityconsole.util;
+package task.universityconsole.util;
 
 import java.util.List;
 import lombok.Getter;
 import org.springframework.stereotype.Component;
-import test.task.universityconsole.service.DepartmentService;
-import test.task.universityconsole.service.LectorService;
+import task.universityconsole.service.DepartmentService;
+import task.universityconsole.service.LectorService;
 
 @Getter
 @Component

@@ -1,17 +1,17 @@
-package test.task.universityconsole.service.impl;
+package task.universityconsole.service.impl;
 
 import java.util.List;
 import org.springframework.stereotype.Service;
-import test.task.universityconsole.service.ResponseService;
-import test.task.universityconsole.util.ParseUtil;
+import task.universityconsole.service.ResponseService;
+import task.universityconsole.util.ParseUtil;
 
 @Service
 public class GlobalSearchServiceImpl implements ResponseService {
-    private static  final String ANSWER_TEMPLATE = "Answer: ";
+    private static final String ANSWER_TEMPLATE = "Answer: ";
     private static final String COMMA_SEPARATOR = ",";
     private static final String WHITESPACE_SEPARATOR = " ";
     private static final int FIRST_NAME_INDEX = 0;
-    public static final int LAST_NAME_INDEX = 1;
+    private static final int LAST_NAME_INDEX = 1;
     private final ParseUtil parseUtil;
 
     public GlobalSearchServiceImpl(ParseUtil parseUtil) {

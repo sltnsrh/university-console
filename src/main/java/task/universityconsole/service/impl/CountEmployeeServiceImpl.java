@@ -1,8 +1,8 @@
-package test.task.universityconsole.service.impl;
+package task.universityconsole.service.impl;
 
 import org.springframework.stereotype.Service;
-import test.task.universityconsole.service.ResponseService;
-import test.task.universityconsole.util.ParseUtil;
+import task.universityconsole.service.ResponseService;
+import task.universityconsole.util.ParseUtil;
 
 @Service
 public class CountEmployeeServiceImpl implements ResponseService {

@@ -1,12 +1,12 @@
-package test.task.universityconsole.service.impl;
+package task.universityconsole.service.impl;
 
 import java.math.BigDecimal;
 import java.util.List;
 import org.springframework.stereotype.Service;
-import test.task.universityconsole.model.Department;
-import test.task.universityconsole.model.Lector;
-import test.task.universityconsole.repository.DepartmentRepository;
-import test.task.universityconsole.service.DepartmentService;
+import task.universityconsole.model.Department;
+import task.universityconsole.model.Lector;
+import task.universityconsole.repository.DepartmentRepository;
+import task.universityconsole.service.DepartmentService;
 
 @Service
 public class DepartmentServiceImpl implements DepartmentService {
