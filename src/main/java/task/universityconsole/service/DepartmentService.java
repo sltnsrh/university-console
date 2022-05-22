@@ -1,9 +1,9 @@
-package test.task.universityconsole.service;
+package task.universityconsole.service;
 
 import java.math.BigDecimal;
 import java.util.List;
-import test.task.universityconsole.model.Department;
-import test.task.universityconsole.model.Lector;
+import task.universityconsole.model.Department;
+import task.universityconsole.model.Lector;
 
 public interface DepartmentService {
     Department add(Department department);

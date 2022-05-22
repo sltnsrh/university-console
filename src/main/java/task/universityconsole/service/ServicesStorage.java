@@ -1,15 +1,15 @@
-package test.task.universityconsole.service;
+package task.universityconsole.service;
 
 import java.util.HashMap;
 import java.util.Map;
 import lombok.Getter;
 import org.springframework.stereotype.Component;
-import test.task.universityconsole.service.impl.AvgSalaryServiceImpl;
-import test.task.universityconsole.service.impl.CountEmployeeServiceImpl;
-import test.task.universityconsole.service.impl.DepartmentHeadServiceImpl;
-import test.task.universityconsole.service.impl.DepartmentStatisticsServiceImpl;
-import test.task.universityconsole.service.impl.GlobalSearchServiceImpl;
-import test.task.universityconsole.util.ParseUtil;
+import task.universityconsole.service.impl.AvgSalaryServiceImpl;
+import task.universityconsole.service.impl.CountEmployeeServiceImpl;
+import task.universityconsole.service.impl.DepartmentHeadServiceImpl;
+import task.universityconsole.service.impl.DepartmentStatisticsServiceImpl;
+import task.universityconsole.service.impl.GlobalSearchServiceImpl;
+import task.universityconsole.util.ParseUtil;
 
 @Getter
 @Component

@@ -1,12 +1,12 @@
-package test.task.universityconsole.repository;
+package task.universityconsole.repository;
 
 import java.math.BigDecimal;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
-import test.task.universityconsole.model.Department;
-import test.task.universityconsole.model.Lector;
+import task.universityconsole.model.Department;
+import task.universityconsole.model.Lector;
 
 @Repository
 public interface DepartmentRepository extends JpaRepository<Department, Long> {

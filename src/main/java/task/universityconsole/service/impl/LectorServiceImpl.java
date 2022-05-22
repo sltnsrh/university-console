@@ -1,10 +1,10 @@
-package test.task.universityconsole.service.impl;
+package task.universityconsole.service.impl;
 
 import java.util.List;
 import org.springframework.stereotype.Service;
-import test.task.universityconsole.model.Lector;
-import test.task.universityconsole.repository.LectorRepository;
-import test.task.universityconsole.service.LectorService;
+import task.universityconsole.model.Lector;
+import task.universityconsole.repository.LectorRepository;
+import task.universityconsole.service.LectorService;
 
 @Service
 public class LectorServiceImpl implements LectorService {

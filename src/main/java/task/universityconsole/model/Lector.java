@@ -1,4 +1,4 @@
-package test.task.universityconsole.model;
+package task.universityconsole.model;
 
 import java.math.BigDecimal;
 import java.util.List;

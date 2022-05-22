@@ -1,4 +1,4 @@
-package test.task.universityconsole.service;
+package task.universityconsole.service;
 
 public interface ResponseService {
     String getResponse(String consoleRequest);

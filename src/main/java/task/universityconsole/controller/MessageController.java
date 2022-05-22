@@ -1,4 +1,4 @@
-package test.task.universityconsole.controller;
+package task.universityconsole.controller;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.springframework.stereotype.Component;
-import test.task.universityconsole.service.ServicesStorage;
+import task.universityconsole.service.ServicesStorage;
 
 @Component
 public class MessageController {
