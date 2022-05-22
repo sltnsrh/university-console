@@ -3,6 +3,8 @@ package task.universityconsole.service;
 import java.util.HashMap;
 import java.util.Map;
 import lombok.Getter;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import task.universityconsole.service.impl.AvgSalaryServiceImpl;
 import task.universityconsole.service.impl.CountEmployeeServiceImpl;
@@ -13,7 +15,8 @@ import task.universityconsole.util.ParseUtil;
 
 @Getter
 @Component
-public class ServicesStorage {
+@Order(value = 1)
+public class ServicesStorage implements CommandLineRunner {
     private static final String AVG_SALARY_PATTERN = "^show the average salary for the department";
     private static final String COUNT_EMPLOYEE_PATTERN = "^show count of employee for";
     private static final String HEAD_DEPARTMENT_PATTERN = "^who is head of department";
@@ -24,7 +27,6 @@ public class ServicesStorage {
 
     public ServicesStorage(ParseUtil parseUtil) {
         this.parseUtil = parseUtil;
-        fillServiceMap();
     }
 
     private void fillServiceMap() {
@@ -34,5 +36,10 @@ public class ServicesStorage {
         services.put(SHOW_STATISTICS_PATTERN,
                 new DepartmentStatisticsServiceImpl(parseUtil));
         services.put(GLOBAL_SEARCH_PATTERN, new GlobalSearchServiceImpl(parseUtil));
+    }
+
+    @Override
+    public void run(String... args) throws Exception {
+        fillServiceMap();
     }
 }
