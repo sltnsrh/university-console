@@ -3,11 +3,9 @@ package task.universityconsole;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.core.annotation.Order;
 import task.universityconsole.controller.MessageController;
 
 @SpringBootApplication
-@Order(value = 2)
 public class UniversityApplication implements CommandLineRunner {
     private static MessageController messageController;
 

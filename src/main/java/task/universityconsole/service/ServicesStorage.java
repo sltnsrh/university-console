@@ -2,9 +2,8 @@ package task.universityconsole.service;
 
 import java.util.HashMap;
 import java.util.Map;
+import javax.annotation.PostConstruct;
 import lombok.Getter;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import task.universityconsole.service.impl.AvgSalaryServiceImpl;
 import task.universityconsole.service.impl.CountEmployeeServiceImpl;
@@ -15,8 +14,7 @@ import task.universityconsole.util.ParseUtil;
 
 @Getter
 @Component
-@Order(value = 1)
-public class ServicesStorage implements CommandLineRunner {
+public class ServicesStorage {
     private static final String AVG_SALARY_PATTERN = "^show the average salary for the department";
     private static final String COUNT_EMPLOYEE_PATTERN = "^show count of employee for";
     private static final String HEAD_DEPARTMENT_PATTERN = "^who is head of department";
@@ -29,6 +27,11 @@ public class ServicesStorage implements CommandLineRunner {
         this.parseUtil = parseUtil;
     }
 
+    @PostConstruct
+    public void init() {
+        fillServiceMap();
+    }
+
     private void fillServiceMap() {
         services.put(AVG_SALARY_PATTERN, new AvgSalaryServiceImpl(parseUtil));
         services.put(COUNT_EMPLOYEE_PATTERN, new CountEmployeeServiceImpl(parseUtil));
@@ -36,10 +39,5 @@ public class ServicesStorage implements CommandLineRunner {
         services.put(SHOW_STATISTICS_PATTERN,
                 new DepartmentStatisticsServiceImpl(parseUtil));
         services.put(GLOBAL_SEARCH_PATTERN, new GlobalSearchServiceImpl(parseUtil));
-    }
-
-    @Override
-    public void run(String... args) throws Exception {
-        fillServiceMap();
     }
 }
